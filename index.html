@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BIZORA | Order Now</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    color:#fff;
+    background:
+        radial-gradient(circle at 10% 10%, #30205f 0%, transparent 35%),
+        radial-gradient(circle at 90% 20%, #4a174f 0%, transparent 30%),
+        radial-gradient(circle at 50% 100%, #101d52 0%, transparent 35%),
+        #050816;
+    padding:18px;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+    text-align:center;
+    font-size:44px;
+    font-weight:900;
+    letter-spacing:7px;
+    margin-top:10px;
+
+    background:linear-gradient(
+        90deg,
+        #a78bfa,
+        #f472b6,
+        #67e8f9
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.tagline{
+    text-align:center;
+    color:#aeb4c7;
+    font-size:14px;
+    margin-top:6px;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:32px 22px;
+    border-radius:28px;
+
+    background:rgba(255,255,255,0.065);
+    border:1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.hero h1{
+    font-size:31px;
+    margin-bottom:13px;
+}
+
+.hero p{
+    color:#c4c8d6;
+    line-height:1.7;
+    max-width:650px;
+    margin:auto;
+}
+
+.badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:22px;
+}
+
+.badge{
+    padding:9px 14px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#ddd;
+    font-size:13px;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:30px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(160px,1fr)
+    );
+    gap:13px;
+}
+
+.service-card{
+    padding:20px 14px;
+    text-align:center;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.055);
+    border:1px solid rgba(255,255,255,0.09);
+
+    transition:0.25s;
+}
+
+.service-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(167,139,250,0.5);
+    background:rgba(255,255,255,0.09);
+}
+
+.icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.service-card h3{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.price{
+    color:#67e8f9;
+    font-size:15px;
+    font-weight:bold;
+}
+
+/* ================= WHY ================= */
+
+.why{
+    display:grid;
+    grid-template-columns:repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+    gap:13px;
+}
+
+.why-card{
+    text-align:center;
+    padding:22px 15px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.why-icon{
+    font-size:28px;
+}
+
+.why-card h3{
+    margin:9px 0 7px;
+    font-size:16px;
+}
+
+.why-card p{
+    color:#aeb4c7;
+    font-size:13px;
+    line-height:1.5;
+}
+
+/* ================= ORDER BOX ================= */
+
+.order-box{
+    margin-top:32px;
+    padding:25px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.13);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.22);
+}
+
+.order-heading{
+    text-align:center;
+    margin-bottom:23px;
+}
+
+.order-heading h2{
+    font-size:26px;
+    margin-bottom:7px;
+}
+
+.order-heading p{
+    color:#aeb4c7;
+    font-size:13px;
+}
+
+/* ================= FORM ================= */
+
+label{
+    display:block;
+    margin:16px 0 7px;
+    color:#e4e6ed;
+    font-size:14px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:13px;
+
+    border:1px solid #29334e;
+
+    outline:none;
+
+    background:#0d1427;
+
+    color:#fff;
+
+    font-size:14px;
+
+    transition:0.2s;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#737b91;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#9b7cff;
+    box-shadow:0 0 0 3px rgba(155,124,255,0.10);
+}
+
+select{
+    cursor:pointer;
+}
+
+textarea{
+    min-height:105px;
+    resize:vertical;
+}
+
+/* ================= PRICE DISPLAY ================= */
+
+.selected-price{
+
+    margin-top:18px;
+
+    padding:16px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        90deg,
+        rgba(124,58,237,0.12),
+        rgba(236,72,153,0.10)
+    );
+
+    border:1px solid rgba(167,139,250,0.18);
+
+    color:#d9dbe5;
+}
+
+#price{
+    color:#67e8f9;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ================= BUTTON ================= */
+
+.order-btn{
+
+    width:100%;
+
+    margin-top:24px;
+
+    padding:16px;
+
+    border:0;
+
+    border-radius:15px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        90deg,
+        #7c3aed,
+        #db2777
+    );
+
+    box-shadow:
+        0 10px 30px rgba(124,58,237,0.25);
+
+    transition:0.25s;
+}
+
+.order-btn:hover{
+    transform:translateY(-2px);
+}
+
+.order-btn:active{
+    transform:scale(0.98);
+}
+
+/* ================= INFO ================= */
+
+.info-box{
+
+    margin-top:18px;
+
+    padding:14px;
+
+    text-align:center;
+
+    border-radius:13px;
+
+    background:rgba(34,211,238,0.06);
+
+    border:1px solid rgba(34,211,238,0.10);
+
+    color:#aeb4c7;
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    text-align:center;
+
+    padding:30px 5px 12px;
+
+    color:#737b91;
+
+    font-size:12px;
+
+}
+
+.footer-logo{
+    color:#b9a7ff;
+    font-weight:bold;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:12px;
+    }
+
+    .logo{
+        font-size:34px;
+        letter-spacing:5px;
+    }
+
+    .hero{
+        padding:27px 17px;
+    }
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .order-box{
+        padding:18px;
+    }
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:380px){
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .why{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- ================= LOGO ================= -->
+
+<div class="logo">
+    BIZORA
+</div>
+
+<div class="tagline">
+    Creative Digital Services ✨
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+    <h1>
+        You Imagine It. We Design It. ✨
+    </h1>
+
+    <p>
+        Affordable and creative digital services for
+        students, personal use and small businesses.
+        Tell us what you need and place your order easily.
+    </p>
+
+    <div class="badges">
+
+        <div class="badge">
+            💰 Starting ₹150
+        </div>
+
+        <div class="badge">
+            🎨 Creative Designs
+        </div>
+
+        <div class="badge">
+            ⚡ Fast Delivery
+        </div>
+
+        <div class="badge">
+            📱 Easy Ordering
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SERVICES ================= -->
+
+<div class="section">
+
+    <div class="section-title">
+        🛍️ Our Services
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="service-card">
+            <div class="icon">📊</div>
+            <h3>PPT Design</h3>
+            <div class="price">₹150</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">📝</div>
+            <h3>Assignment</h3>
+            <div class="price">₹150</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">📄</div>
+            <h3>Cover Page</h3>
+            <div class="price">₹150</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">👤</div>
+            <h3>Resume / CV</h3>
+            <div class="price">₹200</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🏆</div>
+            <h3>Certificate</h3>
+            <div class="price">₹200</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">💼</div>
+            <h3>Business Card</h3>
+            <div class="price">₹200</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">📢</div>
+            <h3>Poster Design</h3>
+            <div class="price">₹250</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">💌</div>
+            <h3>Invitation Card</h3>
+            <div class="price">₹250</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">📑</div>
+            <h3>Digital Document</h3>
+            <div class="price">₹300</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">💻</div>
+            <h3>Project</h3>
+            <div class="price">₹350</div>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">✨</div>
+            <h3>Custom Work</h3>
+            <div class="price">₹500</div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= WHY BIZORA ================= -->
+
+<div class="section">
+
+    <div class="section-title">
+        💜 Why Choose Bizora?
+    </div>
+
+
+    <div class="why">
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                💰
+            </div>
+
+            <h3>
+                Affordable
+            </h3>
+
+            <p>
+                Budget-friendly services
+                starting from ₹150.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                🎨
+            </div>
+
+            <h3>
+                Creative
+            </h3>
+
+            <p>
+                Clean and attractive designs
+                according to your requirements.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                📱
+            </div>
+
+            <h3>
+                Easy Ordering
+            </h3>
+
+            <p>
+                Place your order easily
+                through WhatsApp.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                💬
+            </div>
+
+            <h3>
+                Direct Contact
+            </h3>
+
+            <p>
+                Discuss your requirements
+                directly with Bizora.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= ORDER FORM ================= -->
+
+<div class="order-box">
+
+
+    <div class="order-heading">
+
+        <h2>
+            🛒 Place Your Order
+        </h2>
+
+        <p>
+            Fill in your details and send your order on WhatsApp.
+        </p>
+
+    </div>
+
+
+    <form id="orderForm">
+
+
+        <!-- NAME -->
+
+        <label>
+            👤 Customer Name
+        </label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter your full name"
+            required
+        >
+
+
+        <!-- EMAIL -->
+
+        <label>
+            📧 Email Address
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+
+        <!-- PHONE -->
+
+        <label>
+            📱 WhatsApp / Contact Number
+        </label>
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Enter your contact number"
+            required
+        >
+
+
+        <!-- SERVICE -->
+
+        <label>
+            📝 Select Service
+        </label>
+
+        <select
+            id="service"
+            onchange="updatePrice()"
+            required
+        >
+
+            <option value="">
+                -- Select a Service --
+            </option>
+
+            <option value="PPT Design|150">
+                PPT Design - ₹150
+            </option>
+
+            <option value="Assignment|150">
+                Assignment - ₹150
+            </option>
+
+            <option value="Cover Page|150">
+                Cover Page - ₹150
+            </option>
+
+            <option value="Resume / CV|200">
+                Resume / CV - ₹200
+            </option>
+
+            <option value="Certificate Design|200">
+                Certificate Design - ₹200
+            </option>
+
+            <option value="Business Card|200">
+                Business Card - ₹200
+            </option>
+
+            <option value="Poster Design|250">
+                Poster Design - ₹250
+            </option>
+
+            <option value="Invitation Card|250">
+                Invitation Card - ₹250
+            </option>
+
+            <option value="Digital Document Design|300">
+                Digital Document Design - ₹300
+            </option>
+
+            <option value="Project|350">
+                Project - ₹350
+            </option>
+
+            <option value="Other / Custom Work|500">
+                Other / Custom Work - ₹500
+            </option>
+
+        </select>
+
+
+        <!-- PRICE -->
+
+        <div class="selected-price">
+
+            💰 Selected Price:
+
+            <span id="price">
+                ₹0
+            </span>
+
+        </div>
+
+
+        <!-- DATE -->
+
+        <label>
+            📅 Required Date
+        </label>
+
+        <input
+            type="date"
+            id="date"
+            required
+        >
+
+
+        <!-- REQUIREMENTS -->
+
+        <label>
+            📌 Your Requirements
+        </label>
+
+        <textarea
+            id="requirements"
+            placeholder="Tell us exactly what you need..."
+            required
+        ></textarea>
+
+
+        <!-- DETAILS -->
+
+        <label>
+            📎 Additional Details
+        </label>
+
+        <textarea
+            id="details"
+            placeholder="Any additional information, topic, size, colour, etc."
+        ></textarea>
+
+
+        <!-- INFO -->
+
+        <div class="info-box">
+
+            💬 After submitting, WhatsApp will open
+            with your order details.
+            Please review the message and tap
+            <b>Send</b>.
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            type="submit"
+            class="order-btn"
+        >
+            📲 Send Order on WhatsApp
+        </button>
+
+
+    </form>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        BIZORA
+    </div>
+
+    Creative Digital Services ✨
+
+    <br><br>
+
+    © 2026 Bizora. All rights reserved.
+
+</footer>
+
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ================= PRICE ================= */
+
+function updatePrice(){
+
+    const service =
+        document.getElementById("service").value;
+
+    const price =
+        document.getElementById("price");
+
+
+    if(service === ""){
+
+        price.innerText = "₹0";
+
+        return;
+    }
+
+
+    const parts =
+        service.split("|");
+
+
+    price.innerText =
+        "₹" + parts[1];
+
+}
+
+
+
+/* ================= WHATSAPP ORDER ================= */
+
+document
+.getElementById("orderForm")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name")
+        .value.trim();
+
+
+    const email =
+        document.getElementById("email")
+        .value.trim();
+
+
+    const phone =
+        document.getElementById("phone")
+        .value.trim();
+
+
+    const serviceValue =
+        document.getElementById("service")
+        .value;
+
+
+    const date =
+        document.getElementById("date")
+        .value;
+
+
+    const requirements =
+        document.getElementById("requirements")
+        .value.trim();
+
+
+    const details =
+        document.getElementById("details")
+        .value.trim();
+
+
+    if(!serviceValue){
+
+        alert("Please select a service.");
+
+        return;
+    }
+
+
+    const parts =
+        serviceValue.split("|");
+
+
+    const service =
+        parts[0];
+
+
+    const amount =
+        parts[1];
+
+
+    const message =
+
+`🛍️ NEW BIZORA ORDER
+
+✨ BIZORA - CREATIVE DIGITAL SERVICES
+
+━━━━━━━━━━━━━━━━━━
+
+👤 Customer Name:
+${name}
+
+📧 Email:
+${email}
+
+📱 Contact:
+${phone}
+
+📝 Service:
+${service}
+
+💰 Service Price:
+₹${amount}
+
+📅 Required Date:
+${date}
+
+📌 Requirements:
+${requirements}
+
+📎 Additional Details:
+${details || "None"}
+
+━━━━━━━━━━━━━━━━━━
+
+✨ Order received through Bizora
+
+Please contact me regarding my order.
+
+Thank you! ❤️`;
+
+
+    const whatsappNumber =
+        "916284126432";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+</script>
+
+
+</body>
+  </html>
